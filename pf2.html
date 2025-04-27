@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodip Mandal | Portfolio</title>
+    <link rel="stylesheet" href="pf2.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Prodip Mandal</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="profile-container">
+                <img src="profile.jpg" alt="Your Profile Picture" class="profile-picture">
+            </div>
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>Hello! I am Prodip Mandal, a dedicated and results-driven Full Stack Developer, AI Engineer, and Data Analyst with a deep passion for creating innovative, user-centric digital solutions. As an AI Developer and AI Architect, I specialize in developing intelligent systems and building scalable AI solutions to solve complex challenges. With a strong foundation in Data Science, I am also an expert in Exploratory Data Analysis (EDA), leveraging data-driven insights to drive decision-making. I am committed to harnessing cutting-edge technologies to deliver impactful experiences and drive the future of digital transformation. My goal is to continuously push the boundaries of creativity and functionality in every project I undertake, blending design, technical skills, and AI-powered solutions to solve real-world problems.</p>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="grid">
+                <div class="grid-item">
+                    <video src="automated_job_apply_bot.mp4" muted class="project-video"></video>
+                    <h3>Automated Job Apply Bot</h3>
+                    <p>Applies to jobs automatically based on your CV and platform preference!</p>
+                </div>
+                <div class="grid-item">
+                    <video src="car_price_prediction.mp4" muted class="project-video"></video>
+                    <h3>Car Price Prediction</h3>
+                    <p>Predicts 2nd hand car prices using the latest data and smart algorithms.</p>
+                </div>
+                <div class="grid-item">
+                    <video src="image_detection_bot.mp4" muted class="project-video"></video>
+                    <h3>Image Detection Bot</h3>
+                    <p>Detects and identifies any image you upload with high accuracy!</p>
+                </div>
+                <div class="grid-item">
+                    <video src="paralax.mov" muted class="project-video"></video>
+                    <h3>Parallax 3D Website</h3>
+                    <p>Interactive 3D scrolling website experience with smooth animations.</p>
+                </div>
+                <div class="grid-item">
+                    <video src="PRODUCT_recomendation.mp4" muted class="project-video"></video>
+                    <h3>Product Recommendation System</h3>
+                    <p>Recommends products to users based on real shopping datasets!</p>
+                </div>
+                <div class="grid-item">
+                    <video src="quiz_project.mov" muted class="project-video"></video>
+                    <h3>Quiz Evaluation Model</h3>
+                    <p>Instantly tells students which answers are right or wrong!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="user_name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="user_email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Prodip Mandal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+       // Animations with GSAP
+document.addEventListener('DOMContentLoaded', function() {
+    gsap.from(".header", {duration: 1, y: -100, opacity: 0, ease: "bounce"});
+    gsap.from(".about", {duration: 1, x: -100, opacity: 0, delay: 0.5});
+    gsap.from(".portfolio", {duration: 1, x: 100, opacity: 0, delay: 0.5});
+    gsap.from(".contact", {duration: 1, y: 100, opacity: 0, delay: 0.5});
+
+    gsap.from(".grid-item", {
+        duration: 1,
+        scale: 0.8,
+        opacity: 0,
+        y: 50,
+        stagger: 0.2,
+        delay: 0.5
+    });
+
+    gsap.from(".grid-item h3, .grid-item p", {
+        duration: 1,
+        opacity: 0,
+        y: 20,
+        stagger: 0.1,
+        delay: 1
+    });
+
+    // ✨ Profile Picture Entrance Animation
+    gsap.from(".profile-picture", {
+        duration: 1,
+        opacity: 0,
+        rotate: 10,
+        scale: 0.8,
+        ease: "back.out(1.7)",
+        delay: 0.6
+    });
+
+    // ✨ Navbar Tabs Animation
+    gsap.from(".header nav ul li", {
+        duration: 0.8,
+        opacity: 0,
+        y: -20,
+        stagger: 0.2,
+        delay: 0.8,
+        ease: "power2.out"
+    });
+
+    // ✨ Contact Form Fields Animation
+    gsap.from("#contact-form input, #contact-form textarea, #contact-form button", {
+        scrollTrigger: "#contact-form",
+        duration: 1,
+        x: -50,
+        opacity: 0,
+        stagger: 0.3,
+        ease: "power2.out"
+    });
+});
+
+// Video Hover Effect
+const videos = document.querySelectorAll('.project-video');
+videos.forEach(video => {
+    let isMaximized = false;
+
+    // Hover Animation
+    video.addEventListener('mouseenter', () => {
+        gsap.to(video, {
+            duration: 0.4,
+            scale: 1.05,
+            boxShadow: "0px 10px 20px rgba(0,0,0,0.3)"
+        });
+    });
+    video.addEventListener('mouseleave', () => {
+        if (!isMaximized) {
+            gsap.to(video, {
+                duration: 0.4,
+                scale: 1,
+                boxShadow: "none"
+            });
+        }
+    });
+
+    // Click to Maximize / Minimize
+    video.addEventListener('click', () => {
+        if (isMaximized) {
+            gsap.to(video, {
+                duration: 0.6,
+                scale: 1,
+                rotate: 0,
+                y: 0,
+                ease: "power2.out"
+            });
+            video.pause();
+        } else {
+            gsap.to(video, {
+                duration: 0.8,
+                scale: 2,
+                rotate: 5,
+                y: -50,
+                boxShadow: "0px 20px 30px rgba(0,0,0,0.5)",
+                ease: "power2.inOut"
+            });
+            video.play();
+        }
+        isMaximized = !isMaximized;
+    });
+});
+
+// Video Titles and Descriptions Hover
+const gridItems = document.querySelectorAll('.grid-item h3, .grid-item p');
+gridItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        gsap.to(item, {duration: 0.3, y: -5, textShadow: "0px 0px 8px #00f2ff"});
+    });
+    item.addEventListener('mouseleave', () => {
+        gsap.to(item, {duration: 0.3, y: 0, textShadow: "none"});
+    });
+});
+
+    
+        // EmailJS for Contact Form
+        emailjs.init('ROONLj8OYDIsunkzC');
+    
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            emailjs.sendForm('service_ux7hf8n', 'template_hfvhvy2', this)
+                .then(() => {
+                    alert('Message sent successfully!');
+                    form.reset();
+                }, (error) => {
+                    console.error('FAILED...', error);
+                    alert('Failed to send message. Try again later.');
+                });
+        });
+    </script>    
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Portfolio Website Design</title>
+    <link rel="stylesheet" href="pf1.css">
+    <!-- Font awesome cdn for font icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Google Fonts for nice text fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+        }
+        .hero-header {
+            position: relative;
+            text-align: center;
+            padding: 50px 0;
+            background-color: #0a192f;
+            color: white;
+        }
+        .hero-text h1 {
+            font-size: 3.5em;
+            margin: 0;
+            animation: fadeInUp 1s ease-out;
+        }
+        .hero-text h5 {
+            font-size: 1.5em;
+            color: #00d4ff;
+            margin-bottom: 10px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+        .hero-text p {
+            font-size: 1.1em;
+            animation: fadeInUp 1.5s ease-out;
+            margin: 20px auto;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+        .btn-group a {
+            font-size: 1.1em;
+            margin: 10px;
+            padding: 12px 25px;
+            color: #fff;
+            background-color: #ff005d;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn-group a:hover {
+            background-color: #ff3585;
+        }
+        .social i {
+            font-size: 1.5em;
+            color: #ffffff;
+            margin: 10px;
+            transition: color 0.3s ease;
+        }
+        .social i:hover {
+            color: #ff005d;
+        }
+        /* Animation for navbar toggle */
+        .togglebtn {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
+        .togglebtn span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+        /* Unique Portfolio Tab Effect */
+        .navlinks li a {
+            padding: 12px 20px;
+            font-size: 1.1em;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .navlinks li a:hover {
+            color: #ffbe0b;
+        }
+        .navlinks li a.portfolio-tab {
+            background: linear-gradient(135deg, #00ff99, #00d4ff);
+            border-radius: 30px;
+            box-shadow: 0 0 15px rgba(0, 255, 153, 0.7);
+            transform: scale(1.1);
+        }
+        .navlinks li a.portfolio-tab:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(0, 255, 153, 0.9);
+        }
+
+        /* Animation for fading in on page load */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-header">
+        <div class="wrapper">
+            <header>
+                <div class="logo">
+                    <i class="fa-solid fa-p"></i>
+                    <div class="logo-text">Prodip Mandal</div>
+                </div>
+                <nav>
+                    <div class="togglebtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="navlinks">
+                        <li><a href="http://127.0.0.1:5500/portfolio.html">Home</a></li>
+                        <li><a href="http://127.0.0.1:5500/pf2.html" class="portfolio-tab">Portfolio</a></li>
+                        <li><a href="prodip-mandal.pdf">Resume</a></li>
+                        <li><a href="http://127.0.0.1:5500/pf2.html">Blog</a></li>
+                        <li><a href=" https://wa.me/qr/XZBTOA7ERSJ6D1">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container">
+                 <div class="hero-pic">
+                    <img src="profile.jpg" alt="profile pic">
+                 </div>
+                 <div class="hero-text">
+                    <h5>Hi I'm <span class="input">AI Engineer </span></h5>
+                    <h1>Prodip Mandal</h1>
+                    <p> Hello! I am Prodip Mandal, a passionate and innovative AI Engineer and Web Developer with a strong background in web development, artificial intelligence, and data analysis. I specialize in building full-stack applications, creating intuitive digital experiences, and developing cutting-edge AI solutions.
+                    </p>
+
+                    <div class="btn-group">
+                       <a href="prodip-mandal.pdf" class="btn active">Download CV</a>
+                       <a href="https://wa.me/qr/XZBTOA7ERSJ6D1" class="btn">Contact</a>
+                    </div>
+
+                    <div class="social">
+                        <a href="https://github.com/Prodip1-618?tab=repositories"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/prodip-mandal-549ba9298/?trk=opento_sprofile_details"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/prodip1.618/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://x.com/Prodip__01"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-pintrest"></i></a>
+                    </div>
+                 </div>
+            </div>
+        </div>
+     </div>
+    <!-- Typed js for typing text effect -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+    <script>
+        /** creating button click show hide navbar **/
+        var togglebtn = document.querySelector(".togglebtn");
+        var nav = document.querySelector(".navlinks");
+        var links = document.querySelector(".navlinks li");
+
+        togglebtn.addEventListener("click", function () {
+            this.classList.toggle("click");
+            nav.classList.toggle("open");
+        })
+
+        var typed = new Typed(".input", {
+            strings: ["AI Engineer", "Full Stack Developer", "Data Analyst", "AI Architect", "EDA Expert"],
+            typedSpeed: 70,
+            backSpeed: 55,
+            loop: true
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+/* Reset and basics */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0a0a0a; /* deep dark base */
+    color: #e0e0e0; /* soft white text */
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(90deg, #0d0d0d, #1a1a1a); /* soft gradient */
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header h1 {
+    font-size: 2rem;
+    color: #00ffd5; /* neon aqua */
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.header nav a {
+    color: #cccccc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.header nav a:hover {
+    color: #00ffd5;
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;
+    background-color: #101010;
+}
+
+.profile-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-picture {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #00ffd5;
+    transition: transform 0.4s;
+}
+
+.profile-picture:hover {
+    transform: scale(1.05);
+}
+
+.about-content {
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #00ffd5;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    color: #bbbbbb;
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding: 80px 0;
+    background-color: #0d0d0d;
+}
+
+.portfolio h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2rem;
+    color: #00ffd5;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.grid-item {
+    background: #141414;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.grid-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 255, 213, 0.3);
+}
+
+.project-video {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.grid-item h3 {
+    color: #00ffd5;
+    margin-bottom: 10px;
+}
+
+.grid-item p {
+    color: #bbbbbb;
+    font-size: 0.95rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background-color: #101010;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #00ffd5;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-size: 1rem;
+    color: #cccccc;
+}
+
+input, textarea {
+    padding: 10px 15px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #00ffd5;
+    color: #0a0a0a;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #00c8a9;
+}
+
+/* Footer */
+.footer {
+    background-color: #0d0d0d;
+    padding: 20px 0;
+    text-align: center;
+    color: #666666;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .grid {
+        gap: 20px;
+    }
+}
+/* Profile Picture Hover */
+.profile-picture {
+    transition: transform 0.5s, box-shadow 0.5s;
+    cursor: pointer;
+}
+.profile-picture:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 242, 255, 0.4);
+}
+
+/* Navbar Tabs Hover */
+.header nav ul li a {
+    transition: all 0.3s ease;
+}
+.header nav ul li a:hover {
+    transform: translateY(-5px);
+    color: #00f2ff;
+}
+
+/* Contact Form Focus */
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border: 2px solid #00f2ff;
+    box-shadow: 0 0 8px #00f2ff;
+    transition: all 0.3s ease;
+}
+
+/* Submit Button Hover Pulse */
+#contact-form button {
+    transition: all 0.3s ease;
+}
+#contact-form button:hover {
+    transform: scale(1.05);
+    background-color: #00f2ff;
+    color: black;
+}
